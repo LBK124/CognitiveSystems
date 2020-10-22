@@ -1,0 +1,96 @@
+@prefix ex: <http://example.org/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Emma	a foaf:Person ;
+	rdf:type ex:Student ;
+    ex:address [ a ex:Address ;
+            ex:city ex:Madrid ;
+            ex:country ex:Spain ;
+            ex:postalCode "46020"^^xsd:string ;
+            ex:street "Carrer_de_la Guardia_Civil_20"^^xsd:string ] ;
+    ex:age 27 ;
+    ex:degree [ ex:degreeField ex:Biology ;
+            ex:degreeLevel "Bachelor"^^xsd:string ;
+            ex:degreeSources ex:Complutense_University ;
+            ex:year "2018-10-01"^^xsd:gYear ] ;
+    ex:interest ex:Bird,
+        ex:Ecology,
+        ex:Environmentalism,
+        ex:Photography,
+        ex:Travelling ;
+    ex:visit ex:Canada,
+        ex:France,
+        ex:Germany ;
+    foaf:knows ex:Pierre ;
+    foaf:name "Emma_Dominguez"^^xsd:string .
+    
+ex:Pierre a foaf:Person ;
+    ex:address [ a ex:Address ;
+            ex:city ex:Paris ;
+            ex:country ex:France ;
+            ex:postalCode "94709"^^xsd:string ;
+            ex:state ex:Midi ;
+            ex:street "22_Rue_Lafayette"^^xsd:string ] ;
+    ex:age 26 ;
+    ex:interest ex:Biology,
+        ex:Chocolate,
+        ex:Hiking;
+    foaf:knows ex:Emma;
+    foaf:knows ex:Carlo;
+    foaf:knows <http://dig.csail.mit.edu/webdav/timbl/foaf> .
+
+	
+ex:Max a foaf:Person ;
+       rdf:type ex:Student ;
+    ex:address [ a ex:Address ;
+            ex:city ex:Munich ;
+	    ex:label "Munich"^^xsd:string ;
+            ex:country ex:Germany ;
+            ex:postalCode "80636"^^xsd:string ;
+            ex:street "Blutenburgerstrasse 16"^^xsd:string ] ;
+    ex:age 26 ;
+    ex:degree [ ex:degreeField ex:Chemistry ;
+            ex:degreeLevel "Master"^^xsd:string ;
+            ex:degreeSources ex:Ludwig_Maximilian_University ;
+            ex:year "2015-01-01"^^xsd:gYear ] ;
+    ex:expertise ex:Air_Pollution,
+        ex:Toxic_Waste,
+        ex:Waste_Management ;
+    ex:interest ex:ModernAnis,
+    		ex:Photography,
+        	ex:Painting;
+    ex:visit ex:Portugal,
+    	     ex:Italy,
+	     ex:France,
+	     ex:Denmark,
+	     ex:Sweden ;
+    foaf:name "Max_Meier"^^xsd:string .
+
+
+ex:Carlo a foaf:Person ;
+	 rdf:type ex:Student ;
+	 ex:address [ a ex:Address ;
+      ex:city ex:Rome;
+      ex:country ex:Italy ;
+      ex:postalCode "00187"^^xsd:string ;
+      ex:street "Piazza del Quirinale"^^xsd:string ] ;
+    ex:age 26 ;
+    ex:degree [ ex:degreeField ex:Latin ;
+            ex:degreeLevel "Master"^^xsd:string ;
+            ex:degreeSources ex:Sapienza_University ;
+            ex:year "2015-01-01"^^xsd:gYear ] ;
+    ex:expertise ex:Computer_Science,
+        ex:Technology;
+    ex:interest ex:Swimming,
+    		ex:Skiing;
+    ex:visit ex:Japan,
+    	     ex:Nepal,
+	     ex:Alaska,
+	     ex:Sweden ;
+    foaf:name "Carlo_Conte"^^xsd:string .
+
+
